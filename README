@@ -1,0 +1,6 @@
+This contains my emacs configuration.  First preference is given to ELPA
+modules.  That takes away the headache of maintaining multiple modules
+for the user.
+
+Just symlink to the .emacs file within this directory in your home directory
+or copy and edit.
