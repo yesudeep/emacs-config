@@ -1,4 +1,6 @@
 
+;;; Required for my configuration.
+(load-file "~/.emacs.d/init.el")
 
 ;;; This was installed by package-install.el.
 ;;; This provides support for the package system and
