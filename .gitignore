@@ -1,0 +1,8 @@
+*~
+*.bak
+*.bkp
+*.elc
+*.swp
+*.py[co]
+*.egg*
+anything-c-adaptive-history
