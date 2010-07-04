@@ -8,15 +8,17 @@
 ;; Auto-complete
 (require 'auto-complete)
 (require 'auto-complete-config)
+(ac-config-default)
+
 (require 'ac-anything)
 (require 'ac-dabbrev)
-
 
 ;; Configuration
 (global-auto-complete-mode t)
 (setq ac-auto-start 1)
 (setq ac-dwim t)
 (setq ac-ignore-case t)
+
 
 ;; Keybindings
 (define-key ac-completing-map "\M-n" 'ac-next)

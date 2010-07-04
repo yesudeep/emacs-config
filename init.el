@@ -10,11 +10,13 @@
 (progn (cd config-dir)
        (normal-top-level-add-subdirs-to-load-path))
 
+;; Required for ac (auto-complete) to work.
+;;(setq 'ac-dictionary-directories '((concat config-dir "/dict")))
 
 ;; Load initial configuration.
 (load-library "config-colors")
-(load-library "config-completion")
 (load-library "config-modes")
+(load-library "config-completion")
 
 ;; Now set final preferences.
 (load-library "config-preferences")
