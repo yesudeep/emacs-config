@@ -107,15 +107,6 @@
 ;; Automatically fill (right margin) bleed.
 ;; Do not autofill.  This screws up HTML content.
 ;;(setq auto-fill-mode 1)
-;; Kill entire line with C-k and use C-S-backspace for killing from beginning
-
-(defun kill-and-join-forward (&optional arg)
-  "If at end of line, join with following; otherwise kill line.
-    Deletes whitespace at join."
-  (interactive "P")
-  (if (and (eolp) (not (bolp)))
-      (delete-indentation t)
-    (kill-line arg)))
 
 ;; Inhibit startup message.
 (setq inhibit-startup-message t
@@ -123,61 +114,6 @@
       require-final-newline 'visit-save
       )
 ;; Can have values: (t, 'visit-save, 'visit, nil)
-
-
-;; ***************************************************************************
-;; Line movement.
-;; http://www.emacswiki.org/emacs/MoveLine
-;; -- Joe Smith
-(defun move-line (n)
-  "Move the current line up or down by N lines."
-  (interactive "p")
-  (setq col (current-column))
-  (beginning-of-line) (setq start (point))
-  (end-of-line) (forward-char) (setq end (point))
-  (let ((line-text (delete-and-extract-region start end)))
-    (forward-line n)
-    (insert line-text)
-    ;; restore point to original column in moved line
-    (forward-line -1)
-    (forward-char col)))
-(defun move-line-up (n)
-  "Move the current line up by N lines."
-  (interactive "p")
-  (move-line (if (null n) -1 (- n))))
-(defun move-line-down (n)
-  "Move the current line down by N lines."
-  (interactive "p")
-  (move-line (if (null n) 1 n)))
-
-
-;; End line movement.
-
-;; ***************************************************************************
-;; Line insertion
-;; ---------------
-;; insert an empty line after the current line and position the cursor
-;; on its beginning
-(defun insert-empty-line-below ()
-  (interactive)
-  (move-end-of-line nil)
-  (open-line 1)
-  (next-line 1))
-(defun insert-empty-line-above ()
-  (interactive)
-  (previous-line 1)
-  (move-end-of-line nil)
-  (open-line 1)
-  (next-line 1)
-  )
-(defun insert-empty-line-below-next-line ()
-  (interactive)
-  (next-line 1)
-  (move-end-of-line nil)
-  (open-line 1)
-  (next-line 1)
-  )
-
 
 ;; Syntax highlighting
 (global-font-lock-mode t)

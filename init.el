@@ -2,7 +2,7 @@
 
 ;; Configuration root directory path.
 (setq config-dir (file-name-directory
-		       (or (buffer-file-name) load-file-name)))
+                  (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path config-dir)
 (progn (cd (concat config-dir "/themes"))
        (normal-top-level-add-subdirs-to-load-path))
@@ -24,12 +24,10 @@
   (blink-cursor-mode -1))
 
 (require 'config-colors)
+(require 'config-defuns)
 (require 'config-completion)
-
-;; Now set final preferences.
 (require 'config-preferences)
 
-;; Other stuff.
 (require 'config-python-mode)
 
 
