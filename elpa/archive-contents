@@ -1,4 +1,7 @@
 (1
+ (diff-git .
+	   [(0 1 1)
+	    nil "Git integration with diff-mode" single])
  (html-script-src .
 		  [(0 0 2)
 		   nil "Insert <script src=\"..\"> for popular JavaScript libraries" single])
@@ -21,7 +24,7 @@
        [(1 1)
 	nil "M-x interface with Ido-style lazy matching." single])
  (drag-stuff .
-	     [(0 0 2)
+	     [(0 0 3)
 	      nil "Drag stuff (lines, words, region, etc...) around" single])
  (ruby-test-mode .
 		 [(1 0)
@@ -382,7 +385,7 @@
 	   [(1 0)
 	    nil "Major mode for editing Cascading Style Sheets" single])
  (javascript .
-	     [(1 99 8)
+	     [(2 2 1)
 	      nil "Major mode for editing JavaScript source text" single])
  (light-symbol .
 	       [(0 1)
