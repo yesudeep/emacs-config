@@ -3,9 +3,9 @@
 (setq config-dir (file-name-directory
 		       (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path config-dir)
-(progn (cd (concat config-dir "/themes"))
+(progn (cd (concat config-dir "/lib"))
        (normal-top-level-add-subdirs-to-load-path))
-(progn (cd (concat config-dir "/modes"))
+(progn (cd (concat config-dir "/themes"))
        (normal-top-level-add-subdirs-to-load-path))
 (progn (cd config-dir)
        (normal-top-level-add-subdirs-to-load-path))
