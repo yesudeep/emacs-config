@@ -14,6 +14,7 @@
 ;; Load initial configuration.
 (load-library "config-colors")
 (load-library "config-completion")
+(load-library "config-modes")
 
 ;; Now set final preferences.
 (load-library "config-preferences")
