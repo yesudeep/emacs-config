@@ -11,10 +11,10 @@
        (normal-top-level-add-subdirs-to-load-path))
 
 
-;; Load required libraries.
+;; Load initial configuration.
 (load-library "config-colors")
 
-;; Now set preferences.
+;; Now set final preferences.
 (load-library "config-preferences")
 
 
