@@ -10,3 +10,6 @@
 [submodule "themes/twilight-emacs"]
 	path = themes/twilight-emacs
 	url = git://github.com/crafterm/twilight-emacs.git
+[submodule "lib/anything-config"]
+	path = lib/anything-config
+	url = git://repo.or.cz/anything-config.git
