@@ -74,5 +74,9 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 
+;; Version control
+(global-set-key (kbd "C-x g") 'magit-status)
+
+
 (provide 'config-bindings)
 ;;; config-bindings.el ends here

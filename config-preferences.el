@@ -68,6 +68,13 @@
 (setq-default c-basic-offset 4)
 (setq-default py-indent-offset 4)
 
+;; Associate modes with file extensions.
+(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
+(add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
+(add-to-list 'auto-mode-alist '("\\.ya?ml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+
 
 ;; Automatically indent code when pasted.
 (dolist (command '(yank yank-pop))
@@ -128,6 +135,17 @@
 
 ;; Default to unified diffs.
 (setq diff-switches "-u")
+
+;; Cosmetics for diff.
+(eval-after-load 'diff-mode
+  '(progn
+     (set-face-foreground 'diff-added "green4")
+     (set-face-foreground 'diff-removed "red3")))
+
+(eval-after-load 'magit
+  '(progn
+     (set-face-foreground 'magit-diff-add "green3")
+     (set-face-foreground 'magit-diff-del "red3")))
 
 ;; Turn on parentheses matching.
 (show-paren-mode t)
