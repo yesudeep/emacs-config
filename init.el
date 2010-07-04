@@ -13,13 +13,14 @@
 ;; Required for ac (auto-complete) to work.
 ;;(setq 'ac-dictionary-directories '((concat config-dir "/dict")))
 
+
 ;; Load initial configuration.
-(load-library "config-colors")
-(load-library "config-modes")
-(load-library "config-completion")
+(require 'config-colors)
+(require 'config-modes)
+(require 'config-completion)
 
 ;; Now set final preferences.
-(load-library "config-preferences")
+(require 'config-preferences)
 
 
 ;; ***************************************************************************
@@ -82,3 +83,5 @@
 ;;
 
 (setq default-directory "~/")
+
+;;; init.el ends here.

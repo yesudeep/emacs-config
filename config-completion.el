@@ -108,3 +108,6 @@
                                    ac-source-files-in-current-dir
                                    ac-source-filename
                                    ac-source-css-keywords))))
+
+(provide 'config-completion)
+;;; config-completion.el ends here.

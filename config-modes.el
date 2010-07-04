@@ -1,5 +1,4 @@
 
-
 ;; ***************************************************************************
 ;; Python mode
 ;; See http://github.com/EnigmaCurry/emacs/
@@ -45,3 +44,17 @@
                  (lambda ()
                    (not (eq (get-text-property (point) 'face)
                             'font-lock-comment-face))))))
+
+;; Paredit mode
+;; (autoload 'paredit-mode "paredit"
+;;  "Minor mode for pseudo-structurally editing Lisp code." t)
+;;(add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
+;;(add-hook 'clojure-mode-hook (lambda () (paredit-mode +1)))
+;;(add-hook 'lisp-mode-hook (lambda ()
+;;                            (paredit-mode +1)))
+;;(add-hook 'list-interaction-mode-hook (lambda ()
+;;                                        (paredit-mode +1)))
+
+
+(provide 'config-modes)
+;;; config-modes.el ends here.

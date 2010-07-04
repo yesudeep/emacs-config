@@ -47,3 +47,6 @@
           ;;'color-theme-tty-dark
           'color-theme-emacs-nw
           )
+
+(provide 'config-colors)
+;;; config-colors.el ends here.

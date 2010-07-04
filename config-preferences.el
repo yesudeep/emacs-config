@@ -1,6 +1,11 @@
-;; ***************************************************************************
-;; General preferences.
-;; ***************************************************************************
+;;; Global preferences.
+
+(require 'recentf)
+(require 'saveplace)
+(require 'uniquify)
+(require 'autopair)
+(require 'ido)
+(require 'smex)
 
 ;; Delete trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -14,12 +19,19 @@
 
 ;; Disable indentation using tabs.
 (setq-default indent-tabs-mode nil)
+(setq-default indicate-empty-lines t)
+
+
+;; Don't need the toolbar.  It's a waste of vertical space.
+(menu-bar-mode -1)
+
 
 ;; Use 4 spaces for indentation.
 (setq standard-indent 4)
 (setq tab-width 4)
 (setq-default c-basic-offset 4)
 (setq-default py-indent-offset 4)
+
 
 ;; Automatically indent code when pasted.
 (dolist (command '(yank yank-pop))
@@ -71,11 +83,12 @@
     (kill-line arg)))
 
 ;; Inhibit startup message.
-(setq inhibit-startup-message t)
-(setq initial-scratch-message nil)
-
+(setq inhibit-startup-message t
+      initial-scratch-message nil
+      require-final-newline 'visit-save
+      )
 ;; Can have values: (t, 'visit-save, 'visit, nil)
-(setq require-final-newline 'visit-save)
+
 
 ;; ***************************************************************************
 ;; Line movement.
@@ -166,7 +179,6 @@
 ;;
 
 ;; Line movement.
-
 (global-set-key (kbd "M-<up>") 'move-line-up)
 (global-set-key (kbd "M-<down>") 'move-line-down)
 
@@ -196,18 +208,32 @@
 (global-set-key (kbd "s-<return>") 'insert-empty-line-below-next-line)
 
 
+;; ***************************************************************************
+;; Preferences provided by external libraries.
+;; ***************************************************************************
+
+;; Enable autopair in all buffers.
+(autopair-global-mode)
+(setq autopair-blink nil
+      autopair-autowrap t)
+
+
+;; Remember recent files.
+(recentf-mode 1)
+
 
 ;;******************************************************************************
 ;; IDO (ordered last to avoid conflicts).
-(require 'ido)
 (ido-mode t)
 
 ;; (Get smex via ELPA)
 ;; Smex (ido completion for M-x commands)
-(require 'smex)
 (smex-initialize) ;; This should run *after* everything has loaded.
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c M-x") 'smex-update-and-run)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+(provide 'config-preferences)
+;;; config-preferences.el ends here.
