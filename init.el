@@ -3,16 +3,16 @@
 (setq config-dir (file-name-directory
 		       (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path config-dir)
-(progn (cd (concat config-dir "/lib"))
-       (normal-top-level-add-subdirs-to-load-path))
 (progn (cd (concat config-dir "/themes"))
+       (normal-top-level-add-subdirs-to-load-path))
+(progn (cd (concat config-dir "/extensions"))
        (normal-top-level-add-subdirs-to-load-path))
 (progn (cd config-dir)
        (normal-top-level-add-subdirs-to-load-path))
 
 
 ;; Load required libraries.
-;;(load-library "config-colors")
+(load-library "config-colors")
 
 ;; Now set preferences.
 (load-library "config-preferences")
