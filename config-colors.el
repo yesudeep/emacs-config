@@ -1,10 +1,7 @@
-;; ***************************************************************************
-;; Install color themes
-;; --------------------
-;;
+;;; config-colors.el --- Setup colors-themes.
 
 (require 'color-theme)
-
+(color-theme-initialize)
 
 ;; Do not unnecessarily load all the libraries.
 ;; Load the required library here and then enable it below.
@@ -43,10 +40,10 @@
           ;;'color-theme-railscasts
           'color-theme-ir-black
           )
-(add-hook 'after-make-console-frame-hooks
-          ;;'color-theme-tty-dark
-          'color-theme-emacs-nw
-          )
+;;(add-hook 'after-make-console-frame-hooks
+;;          ;;'color-theme-tty-dark
+;;          'color-theme-emacs-nw
+;;          )
 
 (provide 'config-colors)
-;;; config-colors.el ends here.
+;;; config-colors.el ends here

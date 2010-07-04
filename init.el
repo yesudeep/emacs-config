@@ -1,3 +1,4 @@
+;;; init.el -- Entry point
 
 ;; Configuration root directory path.
 (setq config-dir (file-name-directory
@@ -15,16 +16,21 @@
 
 
 ;; Load initial configuration.
-;; Don't need the toolbar.  It's a waste of vertical space.
-(tool-bar-mode -1)
-;;(menu-bar-mode -1)
+(when window-system
+  (setq frame-title-format '(buffer-file-name "%f" ("%b")))
+  (tooltip-mode -1)
+  (mouse-wheel-mode t)
+  (tool-bar-mode -1)
+  (blink-cursor-mode -1))
 
 (require 'config-colors)
-(require 'config-modes)
 (require 'config-completion)
 
 ;; Now set final preferences.
 (require 'config-preferences)
+
+;; Other stuff.
+(require 'config-python-mode)
 
 
 ;; ***************************************************************************
@@ -88,4 +94,4 @@
 
 (setq default-directory "~/")
 
-;;; init.el ends here.
+;;; init.el ends here

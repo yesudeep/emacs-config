@@ -1,4 +1,4 @@
-;;; Global preferences.
+;;; config-preferences.el --- Global preferences.
 
 (require 'recentf)
 (require 'saveplace)
@@ -20,11 +20,12 @@
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 (set-clipboard-coding-system 'utf-8)
 ;; MS Windows clipboard is UTF-16LE
-(if (eq system-type 'windows-nt)
+(when (eq system-type 'windows-nt)
     (set-clipboard-coding-system 'utf-16le-dos)
     )
 
-
+;; Make emacs use the clipboard.
+(setq x-select-enable-clipboard t)
 
 ;; Enable autopair in all buffers.
 (autopair-global-mode)
@@ -36,6 +37,9 @@
 
 ;; Uniquify buffer names.
 (setq uniquify-buffer-name-style 'forward)
+
+;; Allows you to edit compressed files.  Compression/decompression is done on the fly.
+(auto-compression-mode 1)
 
 ;; Save places in files between sessions.
 (setq-default save-place t)
@@ -87,7 +91,9 @@
 
 
 ;; Highlight the current line.
-(global-hl-line-mode 1)
+(when window-system
+  (global-hl-line-mode 1)
+  )
 
 ;; Show the line number in the minibuffer.
 (line-number-mode 1)
@@ -178,7 +184,11 @@
 (setq font-lock-maximum-decoration t)
 
 ;; Make y or n suffice for a yes-or-no question.
-(fset 'yes-or-no-p 'y-or-n-p)
+(defalias 'yes-or-no-p 'y-or-n-p)
+(random t) ;; See the random-number generator.
+
+;; Default to unified diffs.
+(setq diff-switches "-u")
 
 ;; Turn on parentheses matching.
 (show-paren-mode t)
@@ -251,4 +261,4 @@
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 (provide 'config-preferences)
-;;; config-preferences.el ends here.
+;;; config-preferences.el ends here

@@ -1,3 +1,6 @@
+;;; config-completion.el --- Sets up autocompletion.
+
+
 ;;******************************************************************************
 ;; Anything
 (require 'anything)
@@ -110,4 +113,4 @@
                                    ac-source-css-keywords))))
 
 (provide 'config-completion)
-;;; config-completion.el ends here.
+;;; config-completion.el ends here
