@@ -5,7 +5,7 @@
 (add-to-list 'load-path config-dir)
 (progn (cd (concat config-dir "/themes"))
        (normal-top-level-add-subdirs-to-load-path))
-(progn (cd (concat config-dir "/extensions"))
+(progn (cd (concat config-dir "/lib"))
        (normal-top-level-add-subdirs-to-load-path))
 (progn (cd config-dir)
        (normal-top-level-add-subdirs-to-load-path))
