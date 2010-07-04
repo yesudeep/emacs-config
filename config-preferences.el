@@ -7,6 +7,39 @@
 (require 'ido)
 (require 'smex)
 
+
+;; Set UTF-8 as default encoding for all buffers.
+(setq default-buffer-file-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+;; This from a japanese individual.  I hope it works.
+(setq default-buffer-file-coding-system 'utf-8)
+;; From Emacs wiki
+(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+(set-clipboard-coding-system 'utf-8)
+;; MS Windows clipboard is UTF-16LE
+(if (eq system-type 'windows-nt)
+    (set-clipboard-coding-system 'utf-16le-dos)
+    )
+
+
+
+;; Enable autopair in all buffers.
+(autopair-global-mode)
+(setq autopair-blink nil
+      autopair-autowrap t)
+
+;; Remember recent files.
+(recentf-mode 1)
+
+;; Uniquify buffer names.
+(setq uniquify-buffer-name-style 'forward)
+
+;; Save places in files between sessions.
+(setq-default save-place t)
+
 ;; Delete trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -20,10 +53,6 @@
 ;; Disable indentation using tabs.
 (setq-default indent-tabs-mode nil)
 (setq-default indicate-empty-lines t)
-
-
-;; Don't need the toolbar.  It's a waste of vertical space.
-(menu-bar-mode -1)
 
 
 ;; Use 4 spaces for indentation.
@@ -206,20 +235,6 @@
 (global-set-key (kbd "C-S-<return>") 'insert-empty-line-above)
 (global-set-key (kbd "S-<return>") 'insert-empty-line-below)
 (global-set-key (kbd "s-<return>") 'insert-empty-line-below-next-line)
-
-
-;; ***************************************************************************
-;; Preferences provided by external libraries.
-;; ***************************************************************************
-
-;; Enable autopair in all buffers.
-(autopair-global-mode)
-(setq autopair-blink nil
-      autopair-autowrap t)
-
-
-;; Remember recent files.
-(recentf-mode 1)
 
 
 ;;******************************************************************************

@@ -15,6 +15,10 @@
 
 
 ;; Load initial configuration.
+;; Don't need the toolbar.  It's a waste of vertical space.
+(tool-bar-mode -1)
+;;(menu-bar-mode -1)
+
 (require 'config-colors)
 (require 'config-modes)
 (require 'config-completion)
