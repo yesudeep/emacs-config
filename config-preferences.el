@@ -44,7 +44,10 @@
 ;; Save places in files between sessions.
 (setq-default save-place t)
 
-;; Delete trailing whitespace
+;; Show trailing whitespace.
+(setq-default show-trailing-whitespace t)
+
+;; Delete trailing whitespace on save.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Enable the use of the mouse-wheel.
@@ -142,45 +145,14 @@
 ;; Font
 ;;(setq default-frame-alist '((font . "Monaco")))
 
+;; Don't use shift select mode.
+(setq shift-select-mode nil)
+
 ;; Cua mode
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
 (setq cua-keep-region-after-copy t)
 (setq cua-auto-tabify-rectangles nil)
-
-
-;; ***************************************************************************
-;; Key bindings
-;;
-
-;; Line movement.
-(global-set-key (kbd "M-<up>") 'move-line-up)
-(global-set-key (kbd "M-<down>") 'move-line-down)
-
-;; Automatically indent on return.
-;; See http://www.emacswiki.org/emacs-en/AutoIndentation
-
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
-;; Cursor movement.
-
-;;(global-set-key (kbd "<home>") 'beginning-of-line)
-;;(global-set-key (kbd "<end") 'end-of-line)
-(global-set-key (kbd "<home>") 'beginning-of-visual-line)
-(global-set-key (kbd "<end>") 'end-of-visual-line)
-(global-set-key (kbd "C-<home>") 'beginning-of-buffer)
-(global-set-key (kbd "C-<end>") 'end-of-buffer)
-
-;; Killing and yanking.
-(define-key global-map (kbd "<delete>") 'delete-char)
-(define-key global-map (kbd "M-<delete>") 'kill-word)
-(global-set-key (kbd "C-k") 'kill-whole-line)
-(global-set-key (kbd "C-S-<backspace>") 'kill-and-join-forward)
-
-;; Line insertion
-(global-set-key (kbd "C-S-<return>") 'insert-empty-line-above)
-(global-set-key (kbd "S-<return>") 'insert-empty-line-below)
-(global-set-key (kbd "s-<return>") 'insert-empty-line-below-next-line)
 
 
 ;;******************************************************************************
@@ -190,11 +162,6 @@
 ;; (Get smex via ELPA)
 ;; Smex (ido completion for M-x commands)
 (smex-initialize) ;; This should run *after* everything has loaded.
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c M-x") 'smex-update-and-run)
-;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 
 (provide 'config-preferences)
 ;;; config-preferences.el ends here

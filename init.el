@@ -27,6 +27,7 @@
 (require 'config-defuns)
 (require 'config-completion)
 (require 'config-preferences)
+(require 'config-bindings)
 
 (require 'config-python-mode)
 
