@@ -6,3 +6,7 @@
 *.py[co]
 *.egg*
 anything-c-adaptive-history
+.DS_Store
+Desktop.ini
+Thumbs.db
+
