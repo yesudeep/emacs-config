@@ -1,0 +1,3 @@
+[submodule "themes/color-theme-github"]
+	path = themes/color-theme-github
+	url = git://github.com/dudleyf/color-theme-github.git
