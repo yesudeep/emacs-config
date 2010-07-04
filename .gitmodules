@@ -1,12 +1,3 @@
-[submodule "themes/color-theme-github"]
-	path = themes/color-theme-github
-	url = git://github.com/dudleyf/color-theme-github.git
-[submodule "themes/color-theme-ir-black"]
-	path = themes/color-theme-ir-black
-	url = git://github.com/burke/color-theme-ir-black.git
-[submodule "themes/color-theme-railscasts"]
-	path = themes/color-theme-railscasts
-	url = git://github.com/olegshaldybin/color-theme-railscasts.git
-[submodule "themes/twilight-emacs"]
-	path = themes/twilight-emacs
-	url = git://github.com/crafterm/twilight-emacs.git
+[submodule "extensions/anything-config"]
+	path = extensions/anything-config
+	url = git://repo.or.cz/anything-config.git
