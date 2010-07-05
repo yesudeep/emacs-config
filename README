@@ -4,3 +4,6 @@ for the user.
 
 Just symlink to the .emacs file within this directory in your home directory
 or copy and edit.
+
+Largely based on my own configuration and the emacs-starter-kit
+at http://github.com/technomancy/emacs-starter-kit.
