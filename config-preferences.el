@@ -75,7 +75,6 @@
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 
-
 ;; Automatically indent code when pasted.
 (dolist (command '(yank yank-pop))
   (eval `(defadvice ,command (after indent-region activate)

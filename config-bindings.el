@@ -1,5 +1,30 @@
 ;;; config-bindings.el --- Key bindings.
 
+;; ***************************************************************************
+;; User iterface.
+;;
+
+;; Menu bar mode when you need it.
+(global-set-key (kbd "C-<f10>") 'menu-bar-mode)
+
+
+;; Window switching. (C-x o goes to the next window)
+(windmove-default-keybindings) ;; Shift+direction
+(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
+(global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
+
+;; Font size
+(define-key global-map (kbd "C-=") 'text-scale-increase)
+(define-key global-map (kbd "C-+") 'text-scale-increase)
+(define-key global-map (kbd "C--") 'text-scale-decrease)
+
+
+;; **************************************************************************
+;; Editing and navigation.
+
+;; You know, like Readline.
+(global-set-key (kbd "C-M-h") 'backward-kill-word)
+
 ;; Line movement.
 (global-set-key (kbd "M-<up>") 'move-line-up)
 (global-set-key (kbd "M-<down>") 'move-line-down)
@@ -38,13 +63,16 @@
 (global-set-key (kbd "C-M-s") 'isearch-forward)
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 
-;; Window switching. (C-x o goes to the next window)
-(windmove-default-keybindings) ;; Shift+direction
-(global-set-key (kbd "C-x O") (lambda () (interactive) (other-window -1))) ;; back one
-(global-set-key (kbd "C-x C-o") (lambda () (interactive) (other-window 2))) ;; forward two
+;; Revert buffer.
+(global-set-key (kbd "C-c r") 'revert-buffer)
 
-;; Help should search more than just commands
-(global-set-key (kbd "C-h a") 'apropos)
+
+;; ***************************************************************************
+;; Evaluation and shell access.
+;;
+
+;; Should be able to eval-and-replace anywhere.
+(global-set-key (kbd "C-c e") 'eval-and-replace)
 
 ;; Start eshell or switch to it if it's active.
 (global-set-key (kbd "C-x m") 'eshell)
@@ -55,16 +83,20 @@
 ;; Start a regular shell if you prefer that.
 (global-set-key (kbd "C-x M-m") 'shell)
 
+
+;; ***************************************************************************
+;; Miscellaneous.
+;;
+
+;; Jump to a definition in the current file. (This is awesome.)
+(global-set-key (kbd "C-x C-i") 'ido-imenu)
+
+;; Help should search more than just commands
+(global-set-key (kbd "C-h a") 'apropos)
+
+
 ;; File finding
 (global-set-key (kbd "C-x f") 'recentf-ido-find-file)
-(global-set-key (kbd "C-c r") 'revert-buffer)
-
-;; Font size
-(define-key global-map (kbd "C-+") 'text-scale-increase)
-(define-key global-map (kbd "C--") 'text-scale-decrease)
-
-;; You know, like Readline.
-(global-set-key (kbd "C-M-h") 'backward-kill-word)
 
 ;; Smex
 (global-set-key (kbd "M-x") 'smex)
@@ -72,7 +104,6 @@
 (global-set-key (kbd "C-c M-x") 'smex-update-and-run)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
 
 ;; Version control
 (global-set-key (kbd "C-x g") 'magit-status)

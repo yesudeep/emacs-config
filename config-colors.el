@@ -6,15 +6,15 @@
 ;; Do not unnecessarily load all the libraries.
 ;; Load the required library here and then enable it below.
 
-;;(require 'color-theme-tango)
-;;(require 'zenburn)
-;;(require 'color-theme-subdued)
-;;(require 'color-theme-less)
+(require 'color-theme-tango)
+(require 'zenburn)
+(require 'color-theme-subdued)
+(require 'color-theme-less)
 
-;;(load-library "color-theme-github")
-;;(load-library "color-theme-twilight")
-;;(load-library "color-theme-blackboard")
-;;(load-library "color-theme-railscasts")
+(load-library "color-theme-github")
+(load-library "color-theme-twilight")
+(load-library "color-theme-blackboard")
+(load-library "color-theme-railscasts")
 (load-library "color-theme-ir-black")
 
 
