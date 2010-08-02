@@ -28,6 +28,7 @@
 (require 'config-bindings)
 
 (require 'config-python-mode)
+(require 'config-clojure-mode)
 
 
 ;; ***************************************************************************
