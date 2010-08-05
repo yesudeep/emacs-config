@@ -156,5 +156,28 @@
   (byte-recompile-directory config-dif 0)
   )
 
+(defun my-revert-buffer()
+  "revert buffer without asking for confirmation"
+  (interactive "")
+  (revert-buffer t t)
+  )
+
+(defvar my-latest-killed-buffer)
+(defun my-kill-buffer()
+  "
+  Kill current buffer without confirmation.
+  To undo latest kill call my-unkill-buffer
+  "
+  (interactive)
+  (setq my-latest-killed-buffer (buffer-file-name) )
+  (kill-buffer (buffer-name))
+  )
+(defun my-unkill-buffer()
+  "Undo the latest buffer kill."
+  (interactive)
+  (find-file my-latest-killed-buffer )
+  )
+
+
 (provide 'config-defuns)
 ;;; config-defuns.el ends here

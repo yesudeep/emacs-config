@@ -109,5 +109,14 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 
 
+;; Kill and unkill buffer.
+(global-set-key [f3] 'my-kill-buffer)
+(global-set-key [S-f3] 'my-unkill-buffer)
+
+;; Revert buffer
+(global-set-key [f5] 'my-revert-buffer)
+
+
 (provide 'config-bindings)
 ;;; config-bindings.el ends here
+
