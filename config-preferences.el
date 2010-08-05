@@ -24,6 +24,12 @@
     (set-clipboard-coding-system 'utf-16le-dos)
     )
 
+;; Enable textmate mode when the system is Mac.
+(when (eq system-type 'darwin)
+  (require 'textmate)
+  (textmate-mode)
+  )
+
 ;; Make emacs use the clipboard.
 (setq x-select-enable-clipboard t)
 
