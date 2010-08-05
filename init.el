@@ -30,7 +30,7 @@
 (require 'config-python-mode)
 (require 'config-clojure-mode)
 (require 'go-mode-load)
-(require 'coffee-mode)
+(require 'config-coffeescript)
 
 ;; ***************************************************************************
 ;; Custom hooks for the window frame
