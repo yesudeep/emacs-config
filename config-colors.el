@@ -36,9 +36,9 @@
           ;;'color-theme-subdued
           ;;'color-theme-less
           ;;'color-theme-blackboard
-          ;;'color-theme-twilight
+          'color-theme-twilight
           ;;'color-theme-railscasts
-          'color-theme-ir-black
+          ;;'color-theme-ir-black
           )
 ;;(add-hook 'after-make-console-frame-hooks
 ;;          ;;'color-theme-tty-dark
