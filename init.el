@@ -31,6 +31,7 @@
 (require 'config-clojure-mode)
 (require 'go-mode-load)
 (require 'config-coffeescript)
+(require 'config-erc)
 
 ;; ***************************************************************************
 ;; Custom hooks for the window frame
