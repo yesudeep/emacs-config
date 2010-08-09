@@ -117,6 +117,10 @@
 (global-set-key [f5] 'my-revert-buffer)
 
 
+;; Zencoding bindings.
+(global-set-key (kbd "C-M-<return>") 'zencoding-expand-line)
+
+
 (provide 'config-bindings)
 ;;; config-bindings.el ends here
 

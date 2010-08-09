@@ -17,10 +17,16 @@
 (require 'ac-dabbrev)
 
 (require 'yasnippet)
+(require 'zencoding-mode)
 
 ;; Initialize yasnippet.
 (yas/initialize)
 (yas/load-directory (concat config-dir "lib/yasnippet/snippets"))
+
+
+;; Configure zencoding-mode
+(add-hook 'sgml-mode-hook 'zencoding-mode)  ;; Autostart on any markup modes.
+
 
 ;; Configuration
 (global-auto-complete-mode t)
