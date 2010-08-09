@@ -19,3 +19,6 @@
 [submodule "lib/textmate"]
 	path = lib/textmate
 	url = git://github.com/defunkt/textmate.el.git
+[submodule "lib/zencoding"]
+	path = lib/zencoding
+	url = git://github.com/chrisdone/zencoding.git
