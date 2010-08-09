@@ -31,6 +31,7 @@
 (require 'config-clojure-mode)
 (require 'go-mode-load)
 (require 'config-coffeescript)
+(require 'config-haskell-mode)
 (require 'config-erc)
 
 ;; ***************************************************************************
