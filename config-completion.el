@@ -16,6 +16,12 @@
 (require 'ac-anything)
 (require 'ac-dabbrev)
 
+(require 'yasnippet)
+
+;; Initialize yasnippet.
+(yas/initialize)
+(yas/load-directory (concat config-dir "lib/yasnippet/snippets"))
+
 ;; Configuration
 (global-auto-complete-mode t)
 (setq ac-auto-start 1)
@@ -41,11 +47,14 @@
 
 ;; Autocomplete will be enabled for all these modes.
 (setq-default ac-modes
-              '(ada-mode
+              '(
+                ada-mode
                 asm-mode
                 c++-mode
                 c-mode
                 cc-mode
+                clojure-mode
+                coffee-mode
                 cperl-mode
                 css-mode
                 css-mode
@@ -63,6 +72,7 @@
                 lisp-interaction-mode
                 lisp-mode
                 literate-haskell-mode
+                lua-mode
                 makefile-mode
                 org-mode
                 perl-mode
@@ -70,12 +80,13 @@
                 python-mode
                 ruby-mode
                 sass-mode
+                scala-mode
                 scheme-mode
                 sgml-mode
                 sh-mode
                 xml-mode
                 yaml-mode
-                scala-mode))
+                ))
 ;; (add-to-list 'ac-trigger-commands 'org-self-insert-command) ; if you want enable auto-complete at org-mode, uncomment this line
 
 
