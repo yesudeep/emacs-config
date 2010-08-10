@@ -120,6 +120,9 @@
 ;; Zencoding bindings.
 (global-set-key (kbd "C-M-<return>") 'zencoding-expand-line)
 
+;; Start ERC.
+(global-set-key (kbd "M-<f1>") 'erc-start)
+
 
 (provide 'config-bindings)
 ;;; config-bindings.el ends here

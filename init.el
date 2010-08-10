@@ -25,6 +25,7 @@
 (require 'config-defuns)
 (require 'config-completion)
 (require 'config-preferences)
+(require 'config-erc)
 (require 'config-bindings)
 
 (require 'config-python-mode)
@@ -32,7 +33,8 @@
 (require 'go-mode-load)
 (require 'config-coffeescript)
 (require 'config-haskell-mode)
-(require 'config-erc)
+
+
 
 ;; ***************************************************************************
 ;; Custom hooks for the window frame
