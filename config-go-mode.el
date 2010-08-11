@@ -1,0 +1,4 @@
+
+
+
+(provide 'config-go-mode)

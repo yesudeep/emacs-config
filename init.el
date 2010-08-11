@@ -28,12 +28,13 @@
 (require 'config-erc)
 (require 'config-bindings)
 
+(require 'config-less-mode)
 (require 'config-python-mode)
 (require 'config-clojure-mode)
 (require 'go-mode-load)
+(require 'config-go-mode)
 (require 'config-coffeescript)
 (require 'config-haskell-mode)
-
 
 
 ;; ***************************************************************************
