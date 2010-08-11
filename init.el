@@ -18,7 +18,8 @@
   (tooltip-mode -1)
   (mouse-wheel-mode t)
   (tool-bar-mode -1)
-  (menu-bar-mode -1)
+  (when (not (equal system-type 'darwin))
+    (menu-bar-mode -1))
   (blink-cursor-mode -1))
 
 (require 'config-colors)
